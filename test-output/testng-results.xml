@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Logs Folder Permissions - Executable: {} , Readable: {}, Writable: {}]]>
+    </line>
+    <line>
+      <![CDATA[Screenshots Folder Permissions - Executable: {} ,Readable: {} , Writable: {}]]>
+    </line>
+    <line>
+      <![CDATA[Log file is created with filename - {}]]>
+    </line>
+    <line>
+      <![CDATA[Running before suite......]]>
+    </line>
+    <line>
+      <![CDATA[Internet connection is fine...]]>
+    </line>
+    <line>
+      <![CDATA[<span style="color:green")>JDK is installed in your System & Java Version is - 1.8.0_231</span>]]>
+    </line>
+    <line>
+      <![CDATA[Automation Execution started on Tue Oct 27 17:17:50 IST 2020 on Thread id:- 1]]>
+    </line>
+    <line>
+      <![CDATA[<font style="color:green">Automation Execution started on Tue Oct 27 17:17:50 IST 2020 on Thread id:- 1</font></br>]]>
+    </line>
+    <line>
+      <![CDATA[{} in {} OS]]>
+    </line>
+    <line>
+      <![CDATA[Opening {} browser in {} OS]]>
+    </line>
+    <line>
+      <![CDATA[{} Browser is opened at {}]]>
+    </line>
+    <line>
+      <![CDATA[Browser is Maximized]]>
+    </line>
+    <line>
+      <![CDATA[Opening Url - https://weather.com/en-IN/]]>
+    </line>
+    <line>
+      <![CDATA[Waiting for {} seconds]]>
+    </line>
+    <line>
+      <![CDATA[<B>Test 'getNVerifyCurrentWeather' Started on 'Tue Oct 27 17:17:50 IST 2020'</B>]]>
+    </line>
+    <line>
+      <![CDATA[Waiting for {} seconds]]>
+    </line>
+    <line>
+      <![CDATA[Enter the Enter city name :- Delhi as 'Delhi']]>
+    </line>
+    <line>
+      <![CDATA[Waiting for {} seconds]]>
+    </line>
+    <line>
+      <![CDATA[Getting text of 'Current Temperature Value']]>
+    </line>
+    <line>
+      <![CDATA[Waiting for {} seconds]]>
+    </line>
+    <line>
+      <![CDATA[<span style="color:green")>Text is - '28°' and Element is displayed</span>]]>
+    </line>
+    <line>
+      <![CDATA[Getting response of GET api :- '{}?{}']]>
+    </line>
+    <line>
+      <![CDATA[Value of Key - '{}' :- '{}']]>
+    </line>
+    <line>
+      <![CDATA[<B>Test 'getNVerifyCurrentWeather' Passed on '27/10/20 5:18 PM'</B>]]>
+    </line>
+    <line>
+      <![CDATA[Browser Closed]]>
+    </line>
+  </reporter-output>
+  <suite name="Weather Reporting" duration-ms="21788" started-at="2020-10-27T11:47:50Z" finished-at="2020-10-27T11:48:12Z">
+    <groups>
+    </groups>
+    <test name="Weather Reporting Tests" duration-ms="21788" started-at="2020-10-27T11:47:50Z" finished-at="2020-10-27T11:48:12Z">
+      <class name="tests.TodayWeatherTests">
+        <test-method status="PASS" signature="deleteLogs()[pri:0, instance:tests.TodayWeatherTests@3f2a3a5]" name="deleteLogs" is-config="true" duration-ms="46" started-at="2020-10-27T11:47:50Z" description="Delete 15 days old logs files" finished-at="2020-10-27T11:47:50Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Logs Folder Permissions - Executable: {} , Readable: {}, Writable: {}]]>
+            </line>
+            <line>
+              <![CDATA[Screenshots Folder Permissions - Executable: {} ,Readable: {} , Writable: {}]]>
+            </line>
+            <line>
+              <![CDATA[Log file is created with filename - {}]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- deleteLogs -->
+        <test-method status="PASS" signature="setBrowser(java.lang.String)[pri:0, instance:tests.TodayWeatherTests@3f2a3a5]" name="setBrowser" is-config="true" duration-ms="2567" started-at="2020-10-27T11:47:50Z" description="Initialize WebDriver and Launching the Browser" finished-at="2020-10-27T11:47:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[{} in {} OS]]>
+            </line>
+            <line>
+              <![CDATA[Opening {} browser in {} OS]]>
+            </line>
+            <line>
+              <![CDATA[{} Browser is opened at {}]]>
+            </line>
+            <line>
+              <![CDATA[Browser is Maximized]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method status="PASS" signature="launchWeatherURL()[pri:0, instance:tests.TodayWeatherTests@3f2a3a5]" name="launchWeatherURL" is-config="true" duration-ms="1949" started-at="2020-10-27T11:47:53Z" description="Launching the Weather Url" finished-at="2020-10-27T11:47:55Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Opening Url - https://weather.com/en-IN/]]>
+            </line>
+            <line>
+              <![CDATA[Waiting for {} seconds]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchWeatherURL -->
+        <test-method status="PASS" signature="driverInitialization()[pri:0, instance:tests.TodayWeatherTests@3f2a3a5]" name="driverInitialization" is-config="true" duration-ms="24" started-at="2020-10-27T11:47:55Z" description="WebDriver Initialization" finished-at="2020-10-27T11:47:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverInitialization -->
+        <test-method status="PASS" signature="getNVerifyCurrentWeather()[pri:0, instance:tests.TodayWeatherTests@3f2a3a5]" name="getNVerifyCurrentWeather" duration-ms="16864" started-at="2020-10-27T11:47:55Z" description="Verify Current Weather" finished-at="2020-10-27T11:48:11Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<B>Test 'getNVerifyCurrentWeather' Started on 'Tue Oct 27 17:17:50 IST 2020'</B>]]>
+            </line>
+            <line>
+              <![CDATA[Waiting for {} seconds]]>
+            </line>
+            <line>
+              <![CDATA[Enter the Enter city name :- Delhi as 'Delhi']]>
+            </line>
+            <line>
+              <![CDATA[Waiting for {} seconds]]>
+            </line>
+            <line>
+              <![CDATA[Getting text of 'Current Temperature Value']]>
+            </line>
+            <line>
+              <![CDATA[Waiting for {} seconds]]>
+            </line>
+            <line>
+              <![CDATA[<span style="color:green")>Text is - '28°' and Element is displayed</span>]]>
+            </line>
+            <line>
+              <![CDATA[Getting response of GET api :- '{}?{}']]>
+            </line>
+            <line>
+              <![CDATA[Value of Key - '{}' :- '{}']]>
+            </line>
+            <line>
+              <![CDATA[<B>Test 'getNVerifyCurrentWeather' Passed on '27/10/20 5:18 PM'</B>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- getNVerifyCurrentWeather -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:tests.TodayWeatherTests@3f2a3a5]" name="closeBrowser" is-config="true" duration-ms="256" started-at="2020-10-27T11:48:11Z" description="Closing the Browser" finished-at="2020-10-27T11:48:12Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Browser Closed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- tests.TodayWeatherTests -->
+    </test> <!-- Weather Reporting Tests -->
+  </suite> <!-- Weather Reporting -->
+</testng-results>
