@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Weather Reporting" verbose="1">
+  <listeners>
+    <listener class-name="common.Listeners"/>
+  </listeners>
+  <parameter name="browserName" value="chrome"/>
+  <test name="Weather Reporting Tests">
+    <classes>
+      <class name="tests.TodayWeatherTests"/>
+    </classes>
+  </test>
+</suite>

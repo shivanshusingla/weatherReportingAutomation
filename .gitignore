@@ -4,6 +4,21 @@
 # Log file
 *.log
 
+# Intellij folder
+.idea
+
+# Screenshots folder
+Screenshots
+
+# Logs folder
+logs
+
+# Maven target folder
+target
+
+# Test Output folder
+test-output
+
 # BlueJ files
 *.ctxt
 
