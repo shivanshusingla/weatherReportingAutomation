@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.safari.SafariDriver;
 
 /**
  * <h1>common.BrowserFactory Class</h1> <B>common.BrowserFactory Class is used to provide
@@ -49,9 +48,6 @@ public class BrowserFactory {
         break;
       case "firefox": // Firefox Browser
         driver = new FirefoxDriver();
-        break;
-      case "safari":
-        driver = new SafariDriver();
         break;
       case "chrome-headless":
         ChromeOptions chromeOptions = new ChromeOptions();

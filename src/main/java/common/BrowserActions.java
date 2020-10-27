@@ -1,10 +1,8 @@
 package common;
 
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -22,11 +20,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BrowserActions {
 
-  public static void refresh() {
-    BrowserFactory.driver.navigate().refresh();
-    TestLogs.info("Browser Refreshed!");
-  }
-
   public static void maximize(String description) {
     BrowserFactory.driver.manage().window().maximize();
     TestLogs.info(description);
@@ -41,23 +34,6 @@ public class BrowserActions {
     TestLogs.info("Waiting for {} seconds", time);
     WebDriverWait wait = new WebDriverWait(BrowserFactory.driver, time);
     wait.until(ExpectedConditions.elementToBeClickable(element));
-  }
-
-  public static boolean waitUntil(int timeout, WebElement element, String description) {
-    FluentWait wait = new FluentWait(BrowserFactory.driver).withTimeout(timeout, TimeUnit.SECONDS)
-        .pollingEvery(timeout, TimeUnit.SECONDS)
-        .ignoring(NoSuchElementException.class);// make sure that this exception is ignored
-    TestLogs.info("Waiting for {} for - {} seconds till '{}' is not Found!", description, timeout,
-        element);
-    return element.isDisplayed();
-  }
-
-  public static void switchToIFrame(String nameOrId) {
-    BrowserFactory.driver.switchTo().frame(nameOrId);
-  }
-
-  public static void switchToDefaultContent() {
-    BrowserFactory.driver.switchTo().defaultContent();
   }
 
   public String openWebsiteURL(String url, String description) {

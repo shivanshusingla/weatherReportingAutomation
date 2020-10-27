@@ -12,11 +12,14 @@ import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Properties;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  * <h1>DataReader Class</h1> <B>Main purpose of DataReader Class is to Read data
@@ -74,25 +77,8 @@ public class FileDataReader {
       } catch (IOException e) {
         TestLogs.fail(ExceptionUtils.getStackTrace(e));
       }
-    }
-
-    /*
-     * Check condition if the file is xls file and xls file is not supported in MS
-     * Xcel above 2007
-     */
-    else if (fileExtensionName.equals(".xls")) {
-      TestLogs.info("Getting Data from {}", fileName);
-      try {
-        workbook = new HSSFWorkbook(inputStream);
-      } catch (IOException e) {
-        TestLogs.fail(ExceptionUtils.getStackTrace(e));
-      }
     } else { // for .ods file
       TestLogs.fail("Getting Data from " + fileName + " But .ods file is not implemented");
-      /*
-       * ODSReader objODSReader = new ODSReader(); objODSReader.readODS(file);
-       * Spreadsheet document = new Spreadsheet(inputStream);
-       */
     }
 
     // Read sheet inside the workbook by its name
@@ -125,6 +111,22 @@ public class FileDataReader {
     }
     String content = bldr.toString();
     return content;
+  }
+
+  public static Object getJSONValue(String key) {
+    Object obj = null;
+    try {
+      obj = new JSONParser().parse(new FileReader(
+          System.getProperty(Constants.USER_DIR) + File.separator
+              + "src/main/resources/input.json"));
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+    // typecasting obj to JSONObject
+    JSONObject jo = (JSONObject) obj;
+    return jo.get(key);
   }
 
   /**

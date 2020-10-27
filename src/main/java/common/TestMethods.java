@@ -1,15 +1,11 @@
 package common;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.testng.Assert;
 
@@ -27,40 +23,6 @@ import org.testng.Assert;
  */
 
 public class TestMethods {
-
-  public static void clear(WebElement element, String description) {
-    element.clear();
-    TestLogs.info(new StringBuilder().append("Data cleared of ").append(description).toString());
-  }
-
-  public static void click(WebElement element, String description) {
-    try {
-      BrowserActions.explicitWait(15, element);
-
-      element.click();
-      TestLogs.info("Click on '" + description + "'");
-    } catch (StaleElementReferenceException ser) {
-      TestLogs.fail(ser.toString());
-    } catch (UnreachableBrowserException ube) {
-      TestLogs.fail(ExceptionUtils.getStackTrace(ube));
-    } catch (org.openqa.selenium.TimeoutException tm) {
-      TestLogs.fail(tm.toString());
-    } catch (Exception e) {
-      TestLogs.fail(e.toString());
-    }
-  }
-
-  public static void actionClick(WebElement element, String description) {
-    try {
-      BrowserActions.explicitWait(15, element);
-
-      TestLogs.info("Right Click on - {}", element.getText());
-      Actions actions = new Actions(BrowserFactory.driver);
-      actions.moveToElement(element).click().perform();
-    } catch (Exception e) {
-      TestLogs.fail(e.toString());
-    }
-  }
 
   public static String getText(WebElement element, String description) {
     BrowserActions.explicitWait(10, element);
@@ -96,16 +58,6 @@ public class TestMethods {
     return false;
   }
 
-  public static boolean verifyElementPresent(WebElement element, String description) {
-    if (element.isDisplayed()) {
-      TestLogs.pass("Verified the presence of element '" + description + "' on the page");
-      return true;
-    } else {
-      TestLogs.warn("Element '" + description + "' is not present on the page");
-    }
-    return false;
-  }
-
   /**
    * <b>getAttribute(WebElement element, String attributeName, String description)
    * Method</b>
@@ -129,31 +81,6 @@ public class TestMethods {
     }
 
     return value;
-  }
-
-  public static List<String> getTextOfAllElements(List<WebElement> elements) {
-    List<String> textOfAllElements = new ArrayList<String>();
-    if (!elements.isEmpty()) {
-      for (WebElement e : elements) {
-        textOfAllElements.add(e.getText());
-      }
-    } else if (textOfAllElements.contains("")) {
-      TestLogs.warn("Element is displayed but Empty text is present");
-    } else {
-      TestLogs.fail("Text is not found & Elements are not displayed!");
-    }
-    return textOfAllElements;
-  }
-
-  public static boolean scrollDownToView(WebElement element) {
-    JavascriptExecutor jse = (JavascriptExecutor) BrowserFactory.driver;
-    jse.executeScript("arguments[0].scrollIntoView(true)", element);
-    return element.isDisplayed();
-  }
-
-  public static void scrollDownToBottom() {
-    JavascriptExecutor jse = (JavascriptExecutor) BrowserFactory.driver;
-    jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
   }
 
   public static void enterData(WebElement element, String value, String description) {
